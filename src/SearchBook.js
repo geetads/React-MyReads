@@ -22,7 +22,25 @@ handleChange=(e)=>{
 
   render() {
     const  {searchBookResult}=this.props;
-    const {onUpdateShelf}=this.props;
+    const {onUpdateShelf,books}=this.props;
+    console.log("searchBookResult",searchBookResult);
+    console.log("books",books)
+let verifiedBooks=[];
+verifiedBooks=searchBookResult && searchBookResult.length>0 && searchBookResult.map(book=>{
+books && books.length>0 && books.forEach(bookOnShelf=>{
+    book.id===bookOnShelf.id ?(
+      book.shelf=bookOnShelf.shelf
+    ):(
+      books.shelf || (
+        books.shelf='none'
+      )
+    )
+  }
+)
+
+  return book;
+})
+
 
 
     return( 
@@ -52,7 +70,7 @@ handleChange=(e)=>{
            <div>
               <div className='bookshelf-books'>
                 { searchBookResult && searchBookResult.length>0  && 
-                (<ListBooks books={searchBookResult} onUpdateShelf={onUpdateShelf} />)}
+                (<ListBooks books={verifiedBooks} onUpdateShelf={onUpdateShelf} />)}
            </div>
            </div>       
           </div>               
