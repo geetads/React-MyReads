@@ -21,7 +21,8 @@ return (
             <li key={i}>
                        <div className="book">
                           <div className="book-top">
-                             {book.imageLinks ? (
+
+                          {book.imageLinks ? (
                             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${book.imageLinks.thumbnail})`}}></div>
                           ):
                             <div className="book-cover" style={{ width: 128, 
@@ -30,10 +31,11 @@ return (
                             <div className="book-shelf-changer">
                               <select value={book.shelf} onChange={(e)=>handleSelectChange(book,e)}>
                                 <option value="none" disabled>Move to...</option>
+                                <option name="none" value="none">None</option>
                                 <option name="currentlyReading" value="currentlyReading">Currently Reading</option>
                                 <option name="wantToRead" value="wantToRead">Want to Read</option>
                                 <option name="read" value="read">Read</option>
-                                <option name="none" value="none">None</option>
+                                
                               </select>
                             </div>
                           </div>
