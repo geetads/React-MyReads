@@ -32,6 +32,7 @@ class BooksApp extends React.Component {
  }).catch(function(e){});
   }
 
+
   onSearchBook=(query)=>{
     BooksAPI.search(query,20).then(data=>{
       this.setState(state=>({
@@ -60,7 +61,7 @@ class BooksApp extends React.Component {
             <div className='bookshelf-books'>
 
      <ListBooks books={books.length>0 && books.filter(book=>book.shelf==='currentlyReading')} 
-     onUpdateShelf={this.updateBook}/>
+     onUpdateShelf={this.updateBook }/>
      
      </div>
      </div>
@@ -80,7 +81,7 @@ class BooksApp extends React.Component {
               <div className='bookshelf-books'>
 
      <ListBooks books={books.length>0 && books.filter(book=>book.shelf==='read')} 
-     onUpdateShelf={this.updateBook}/>
+     onUpdateShelf={this.updateBook} />
      </div>
      </div>
      </div>
@@ -99,3 +100,5 @@ class BooksApp extends React.Component {
   }
 }
 export default BooksApp
+
+    
