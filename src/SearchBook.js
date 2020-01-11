@@ -70,7 +70,7 @@ books && books.length>0 && books.forEach(bookOnShelf=>{
            <div>
               <div className='bookshelf-books'>
                 { searchBookResult && searchBookResult.length>0  && 
-                (<ListBooks books={verifiedBooks} onUpdateShelf={onUpdateShelf} />)}
+                (<ListBooks books={verifiedBooks} onUpdateShelf={onUpdateShelf}  />)}
            </div>
            </div>       
           </div>               
@@ -79,3 +79,6 @@ books && books.length>0 && books.forEach(bookOnShelf=>{
               }
                 
         export default SearchBooks
+ 
+                
+      
